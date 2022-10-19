@@ -1,8 +1,16 @@
 import React from 'react'
 
-function Pacientes({paciente, setPaciente}) {
+function Pacientes({paciente, setPaciente, eliminarPaciente}) {
 
-  const { nombre, password, email, fecha } = paciente
+  const { nombre, password, email, fecha, id } = paciente;
+
+  const handleDelete = () => {
+    const response = confirm('Deseas eliminar el paciente?');
+
+    if(response){
+      eliminarPaciente(id);
+    }
+  }
   
   return (
 
@@ -44,6 +52,7 @@ function Pacientes({paciente, setPaciente}) {
           </button>
 
           <button type="button"
+          onClick={ handleDelete }
           className='py-2 px-10 bg-red-600 hover:bg-red-800 text-white font-bold rounded-lg'>
           
           Eliminar</button>

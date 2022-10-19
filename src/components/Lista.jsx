@@ -1,6 +1,6 @@
 import Pacientes from './Pacientes';
 
-function Lista({pacientes, setPaciente}) {
+function Lista({pacientes, setPaciente, eliminarPaciente}) {
 
   return (
     <div className='md:w-1/2'>
@@ -18,6 +18,7 @@ function Lista({pacientes, setPaciente}) {
                 key={paciente.id}
                 paciente={paciente}
                 setPaciente={setPaciente}
+                eliminarPaciente={eliminarPaciente}
               />
             )
           })}

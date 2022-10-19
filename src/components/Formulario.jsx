@@ -46,8 +46,13 @@ function Formulario( { pacientes, setPacientes, paciente }) {
       }
 
       if(paciente.id){
+        objdatos.id = paciente.id;
         console.log(objdatos);
         console.log(paciente);
+
+        const pacienteUpdate = pacientes.map(pacient => pacient.id === paciente.id ? objdatos : paciente);
+
+        setPacientes(pacienteUpdate);
 
       } else {
         console.log('modo agregar');
